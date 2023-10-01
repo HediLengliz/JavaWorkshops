@@ -1,3 +1,5 @@
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 import java.util.Scanner;
 public class ZooManagement
 
@@ -14,7 +16,7 @@ public class ZooManagement
             System.out.println("erreur !, veuillez enter un nombre des cages");
         }
 
-      nbrCages = scanner.nextInt();
+        nbrCages = scanner.nextInt();
 
         scanner.nextLine();
 
@@ -30,7 +32,7 @@ public class ZooManagement
         System.out.println(zooName +" comporte " + nbrCages+" cages ");
 
     }
-   public static void main (String[] args) {
+    public static void main (String[] args) {
 
         ZooManagement zoo = new ZooManagement();
         zoo.displayMessage();
@@ -70,7 +72,3 @@ public class ZooManagement
 
 
 }
-
-
-
-
