@@ -1,5 +1,5 @@
 # JavaWorkshops
-series of constructive java Workshops
+# series of constructive java Workshops
 We started by creating the main class ZooManagement with integer and String variables for the number of cages and the zoo name, respectively.
 Then, we allowed user input for these variables using the Scanner class, ensuring proper data handling.
 We constructed classes for managing the zoo, animals, and specific animal types such as Aquatic and Terrestrial, incorporating inheritance and encapsulation concepts.
