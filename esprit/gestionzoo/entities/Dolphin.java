@@ -1,13 +1,11 @@
-public class Dolphin extends Aquatic {
+public abstract class Dolphin extends Aquatic {
     private float swimmingSpeed;
 
     public Dolphin(String family, String name, int age, boolean isMammal, String habitat, float swimmingSpeed) {
         super(family, name, age, isMammal, habitat);
         this.swimmingSpeed = swimmingSpeed;
     }
-    public void swim() {
-        System.out.println("This dolphin is swimming.");
-    }
+    public abstract void swim();
 
     @Override
     public String toString(){

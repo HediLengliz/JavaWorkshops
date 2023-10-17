@@ -1,5 +1,5 @@
 public class Terrestrial extends Animal {
-    private int nbrLegs;
+    private final int nbrLegs;
 
     public Terrestrial(String family, String name, int age, boolean isMammal, int nbrLegs) {
         super(family, name, age, isMammal);
