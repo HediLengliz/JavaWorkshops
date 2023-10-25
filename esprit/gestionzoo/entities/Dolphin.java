@@ -1,5 +1,5 @@
 public abstract class Dolphin extends Aquatic {
-    private float swimmingSpeed;
+    private final float swimmingSpeed;
 
     public Dolphin(String family, String name, int age, boolean isMammal, String habitat, float swimmingSpeed) {
         super(family, name, age, isMammal, habitat);

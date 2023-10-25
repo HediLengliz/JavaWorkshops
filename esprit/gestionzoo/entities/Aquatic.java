@@ -11,7 +11,7 @@ public abstract class Aquatic extends Animal {
     }
 
     public abstract void swim();
-     @Override
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -19,7 +19,7 @@ public abstract class Aquatic extends Animal {
         if (!(obj instanceof Aquatic other)) {
             return false;
         }
-         return this.getname().equals(other.getname()) && this.getAge() == other.getAge() && this.habitat.equals(other.habitat);
+        return this.getname().equals(other.getname()) && this.getAge() == other.getAge() && this.habitat.equals(other.habitat);
     }
 
     protected abstract Object getname();

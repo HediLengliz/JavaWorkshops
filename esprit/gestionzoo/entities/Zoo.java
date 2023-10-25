@@ -1,4 +1,3 @@
-import java.lang.reflect.AccessFlag;
 
 public class Zoo {
 
@@ -37,21 +36,16 @@ public class Zoo {
         System.out.println("Name: " + name + ", City: " + city + ", N° Cages: " + NUMBER_OF_CAGES + " N° animals: " + nbrAnimals);
     }
 
-    boolean addAnimal(Animal animal) {
-        if (isZooFull()) {
-            System.out.println("The zoo is full. Cannot add more animals.");
-            return false;
+    void addAnimal(Animal animal) throws zooFullException,invalidAgeException {
+        if (nbrAnimals == NUMBER_OF_CAGES) {
+            throw new zooFullException("Le zoo est plein. Impossible d'ajouter un nouvel animal.");
         }
-
-        if (searchAnimal(animal) != -1) {
-            System.out.println("An animal with the same name already exists in the zoo.");
-            return false;
+        if (animal.getAge() < 0) {
+            throw new invalidAgeException("L'âge de l'animal ne peut pas être négatif.");
         }
-
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        System.out.println("Animal added to the zoo.");
-        return true;
+        System.out.println("Animal ajouté au zoo.");
     }
 
     boolean removeAnimal(Animal animal) {
@@ -93,9 +87,9 @@ public class Zoo {
     public void addAquaticAnimal(Aquatic aquatic){
         for (int i = 0; i< aquaticAnimals.length;i++){
             if (aquaticAnimals[i] == null){
-               aquaticAnimals = new Aquatic[]{aquatic};
-               System.out.println("aquatic animal added to the zoo ");
-               return;
+                aquaticAnimals = new Aquatic[]{aquatic};
+                System.out.println("aquatic animal added to the zoo ");
+                return;
             }
 
         }

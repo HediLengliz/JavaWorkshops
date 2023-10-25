@@ -1,6 +1,6 @@
 public class ZooManagement {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws zooFullException {
         Animal lion = new Animal();
         lion.name = "Simba";
         lion.age = 8;
@@ -14,9 +14,6 @@ public class ZooManagement {
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
 
 
-        System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(dog));
-
         myZoo.displayAnimals();
 
         System.out.println(myZoo.searchAnimal(dog));
@@ -29,16 +26,18 @@ public class ZooManagement {
 
         System.out.println(myZoo);
 
-        myZoo.addAnimal(lion);
-        myZoo.addAnimal(dog);
-        myZoo.addAnimal(dog2);
+
+        try {
+            myZoo.addAnimal(lion);
+            myZoo.addAnimal(dog);
+        } catch (zooFullException exception) {
+            System.out.println(exception.getMessage());
+        } catch (invalidAgeException exception) {
+            System.out.println("Le zoo est plein : " + exception.getMessage());
+        }
+
         myZoo.displayAnimals();
-        System.out.println("a" + myZoo.removeAnimal(lion));
-        myZoo.displayAnimals();
-        System.out.println("a" + myZoo.removeAnimal(dog2));
-        myZoo.displayAnimals();
-        System.out.println("a" + myZoo.removeAnimal(dog));
-        myZoo.displayAnimals();
+
         Aquatic aquatic = new Aquatic("fish", "shark", 10, false, "ocean") {
             @Override
             public void swim() {
@@ -84,10 +83,10 @@ public class ZooManagement {
                 return null;
             }
         };
-        System.out.println(aquatic.toString());
-        System.out.println(terrestrial.toString());
-        System.out.println(dolphin.toString());
-        System.out.println(penguin.toString());
+        System.out.println(aquatic);
+        System.out.println(terrestrial);
+        System.out.println(dolphin);
+        System.out.println(penguin);
         aquatic.swim();
         dolphin.swim();
         penguin.swim();
@@ -95,8 +94,21 @@ public class ZooManagement {
         myZoo.addAquaticAnimal(dolphin);
         myZoo.letAquaticAnimalsSwim();
 
-//        System.out.println(Zoo.comparerZoo(myZoo, notMyZoo));
-//        System.out.println(myZoo.isZooFull());
+       System.out.println(Zoo.comparerZoo(myZoo, notMyZoo));
+       System.out.println(myZoo.isZooFull());
+       System.out.println(myZoo);
+       System.out.println();
+         /* myZoo.addAnimal(lion);
+        myZoo.addAnimal(dog);
+        myZoo.addAnimal(dog2);
+        myZoo.displayAnimals();
+        System.out.println("a" + myZoo.removeAnimal(lion));
+        myZoo.displayAnimals();
+        System.out.println("a" + myZoo.removeAnimal(dog2));
+        myZoo.displayAnimals();
+        System.out.println("a" + myZoo.removeAnimal(dog));
+        myZoo.displayAnimals();*/
+
 
     }
 
