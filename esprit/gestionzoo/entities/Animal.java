@@ -1,4 +1,6 @@
-public class Animal {
+import esprit.gestionzoo.Omnivore;
+
+public class Animal implements Omnivore<String> {
 
     String family, name;
     int age;
@@ -36,4 +38,19 @@ public class Animal {
                 '}';
     }
 
+    public void eatMeat(String meat) {
+        // Implementation for carnivorous behavior
+        System.out.println("Eating meat: " + meat);
+    }
+
+    @Override
+    public void eatPlants(String plants) {
+        // Implementation for herbivorous behavior
+        System.out.println("Eating plants: " + plants);
+    }
+
+    public void eatPlantsAndMeat(String food) {
+        // Implementation for omnivorous behavior
+        System.out.println("Eating plants and meat: " + food);
+    }
 }

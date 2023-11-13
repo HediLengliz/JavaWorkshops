@@ -1,7 +1,4 @@
-package tn.esprit.gestionzoo.main;
 
-import esprit.gestionzoo.Food;
-import esprit.gestionzoo.*;
 public class ZooManagement {
 
     public static void main(String[] args) throws zooFullException {
@@ -10,6 +7,9 @@ public class ZooManagement {
         lion.age = 8;
         lion.family = "Cats";
         lion.isMammal = true;
+        Aquatic aquatic = new Aquatic();
+        Penguin penguin = new Penguin();
+        Terrestrial terrestrial = new Terrestrial();
 
         Zoo myZoo = new Zoo("Wildlife Park", "Ariana");
         Zoo notMyZoo = new Zoo("WaterPark", "Siliana");
@@ -112,6 +112,19 @@ public class ZooManagement {
         myZoo.displayAnimals();
         System.out.println("a" + myZoo.removeAnimal(dog));
         myZoo.displayAnimals();*/
+        aquatic.eatMeat(Food.FISH);
+
+        penguin.eatMeat(Food.MEAT);
+        penguin.eatPlant(Food.PLANT);
+
+        terrestrial.eatMeat(Food.MEAT);
+        terrestrial.eatPlant(Food.PLANT);
+        terrestrial.eatPlantAndMeat(Food.MEAT);
+
+    } catch (ZooFullException | InvalidAgeException e) {
+        System.out.println("Exception caught: " + e.getMessage());
+    }
+}
 
 
     }
