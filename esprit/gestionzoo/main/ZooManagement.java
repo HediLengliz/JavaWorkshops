@@ -1,3 +1,7 @@
+package tn.esprit.gestionzoo.main;
+
+import esprit.gestionzoo.Food;
+import esprit.gestionzoo.*;
 public class ZooManagement {
 
     public static void main(String[] args) throws zooFullException {
