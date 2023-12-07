@@ -127,26 +127,6 @@ public class ZooManagement {
 }
 
 
-    AffectationHashMap affectationHashMap = new AffectationHashMap();
-
-    Employee emp1 = new Employee(1, "John", "Doe", "IT", 1);
-    Employee emp2 = new Employee(2, "Alice", "Smith", "HR", 2);
-
-    Department dept1 = new Department("IT");
-    Department dept2 = new Department("HR");
-
-        affectationHashMap.ajouterEmployeDepartement(emp1, dept1);
-                affectationHashMap.ajouterEmployeDepartement(emp2, dept2);
-
-                System.out.println("Employés et leurs départements:");
-                affectationHashMap.afficherEmployesEtDepartements();
-
-
-                affectationHashMap.ajouterEmployeDepartement(emp1, dept2);
-
-                System.out.println("\nAprès tentative d'ajouter le même employé dans deux départements:");
-                affectationHashMap.afficherEmployesEtDepartements();
-                }
-                }
+    }
 
 }
